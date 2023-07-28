@@ -10,8 +10,6 @@ for cnt in contours:
     area = cv2.contourArea(cnt)
     if area > 500:
         peri = cv2.arcLength(cnt,True)
-        # print(cv2.contourArea(cnt))
-        # print(cv2.arcLength(cnt,True))
         vertices = cv2.approxPolyDP(cnt,peri*0.02,True)
         corners = (len(vertices))
         x,y,w,h = cv2.boundingRect(vertices)
